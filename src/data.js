@@ -1,4 +1,4 @@
-export const API_KEY = "AIzaSyCBkjzgoXazRUfmoj8pxvpXvIBF4ElszpA" ;
+export const API_KEY = import.meta.env.VITE_API_KEY ;
 
 
 
