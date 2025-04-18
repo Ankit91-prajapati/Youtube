@@ -5,8 +5,7 @@ import dislike from '../../assets/dislike.png';
 import share from '../../assets/share.png';
 import save from '../../assets/save.png';
 import jack from '../../assets/jack.png';
-import user_profile from '../../assets/user_profile.jpg';
-import { value_convertor, API_KEY } from '../../data';
+import { value_convertor } from '../../data';
 import moment from 'moment';
 import { useParams } from 'react-router-dom';
 
