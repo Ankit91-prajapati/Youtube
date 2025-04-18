@@ -19,7 +19,7 @@ const Feed = ({category }) => {
     try{
       const response = await fetch(videoList)
       const data =await response.json()
-      setData(data.items)
+      setData(data.items || [])
     }
     catch(error){
       return `Error fetching data:${error}`
@@ -35,15 +35,15 @@ const Feed = ({category }) => {
     
     
     <div className='feed'>
-      {data.map((item ,index)=>{return(
-       <Link to={`video/${item.snippet.categoryId}/${item.id}`} className='card' key={index}>
-       <img src={item.snippet.thumbnails.medium.url} alt="feed" />
-        <h2>{item.snippet.title}</h2>
-        <h3>{item.snippet.channelTitle}</h3>
-        <p>{value_convertor(item.statistics.viewCount)}views &bull: {moment(item.snippet.publishedAt).fromNow()}</p>
-       </Link>
+     {data?.map((item, index) => (
+  <Link to={`video/${item.snippet.categoryId}/${item.id}`} className='card' key={index}>
+    <img src={item.snippet?.thumbnails?.medium?.url} alt="feed" />
+    <h2>{item.snippet?.title}</h2>
+    <h3>{item.snippet?.channelTitle}</h3>
+    <p>{value_convertor(item.statistics?.viewCount)} views &bull; {moment(item.snippet?.publishedAt).fromNow()}</p>
+  </Link>
+))}
 
-      )})}
       
 
        
